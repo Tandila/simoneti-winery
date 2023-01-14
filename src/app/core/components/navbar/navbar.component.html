@@ -1,0 +1,37 @@
+<div class="navbar">
+
+  <a routerLink="" class="logo"></a>
+
+  <div class="navbar-route">
+    <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ 'Home' | translate }}</a>
+    <a routerLink="/products" routerLinkActive="active">{{ 'Products' | translate }}</a>
+    <a routerLink="/about" routerLinkActive="active">{{ 'About' | translate }}</a>
+    <a routerLink="/contact" routerLinkActive="active">{{ 'Contact' | translate }}</a>
+    <a routerLink="/gallery" routerLinkActive="active">{{ 'Gallery' | translate }}</a>
+  </div>
+
+  <div class="flex lang">
+    <div class="lang-lang">
+      <svg class="flag-icon-{{currentLang.flag}} flag-icon"></svg>
+      <p>• {{currentLang.language.slice(0,3)}}</p>
+      <div class="lang-dropdown">
+        <div class="lang-dropdown-container" *ngFor="let language of languagesDrop" (click)="switchLang(language.code)">
+          <svg class="flag-icon-{{language.flag}} flag-icon"></svg>
+          <p>• {{ language.language }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="dropdown small__screen">
+      <i class="fas fa-bars" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false"></i>
+      <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+        <li><a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="dropdown-item">{{ 'Home' | translate }}</a></li>
+        <li><a routerLink="/products" routerLinkActive="active" class="dropdown-item">{{ 'Products' | translate }}</a></li>
+        <li><a routerLink="/about" routerLinkActive="active" class="dropdown-item">{{ 'About' | translate }}</a></li>
+        <li><a routerLink="/contact" routerLinkActive="active" class="dropdown-item">{{ 'Contact' | translate }}</a></li>
+        <li><a routerLink="/gallery" routerLinkActive="active" class="dropdown-item">{{ 'Gallery' | translate }}</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+</div>

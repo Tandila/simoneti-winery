@@ -1,0 +1,19 @@
+.container-contact {
+  display: grid;
+  grid-template-rows: .6fr 1fr;
+}
+
+.contacts {
+  display: grid;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 30px;
+  i {
+    margin: .7rem;
+  }
+  a {
+    color: white!important;
+  }
+}

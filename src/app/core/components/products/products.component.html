@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row justify-content-center">
+
+
+  <div class="card card__margin" *ngFor="let i of products">
+    <div class="card__image-container">
+      <img draggable="false" class="card__image" [src]="i.img" [alt]="i.name">
+    </div>
+    <div class="card__content">
+      <h2 class="card__title" [textContent]="i.name | translate"></h2>
+    </div>
+  </div>
+  </div>
+</div>

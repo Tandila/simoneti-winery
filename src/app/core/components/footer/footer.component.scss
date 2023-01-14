@@ -1,0 +1,18 @@
+.footer__container {
+  background: #1e2126;
+  width: 100%;
+  padding: 3em;
+  a {
+    color: white!important;
+  }
+}
+.links {
+  display: grid;
+  flex-direction: column;
+  justify-content: flex-start;
+ // font-size: 2rem;
+  i {
+    margin: 1rem;
+    cursor: pointer;
+  }
+}

@@ -18,6 +18,7 @@ import {GalleryComponent} from './core/components/gallery/gallery.component';
 import {CustomLightboxAdapter} from './core/services/CustomLightBoxAdapter.service';
 import {LightboxAdapter, NgxPhotoswipeModule} from '@fnxone/ngx-photoswipe';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {UnderConstructionComponent} from './core/components/under-construction/under-construction.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     AboutComponent,
     ContactComponent,
     ProductsComponent,
-    GalleryComponent
+    GalleryComponent,
+    UnderConstructionComponent
   ],
   imports: [
     BrowserModule,

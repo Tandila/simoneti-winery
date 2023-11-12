@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {Image} from '@fnxone/ngx-photoswipe';
 import {Title} from '@angular/platform-browser';
 import {TranslateService} from '@ngx-translate/core';
 
@@ -15,7 +14,7 @@ export class GalleryComponent implements OnInit {
     public translate: TranslateService) {
   }
 
-  images: Array<Image> = [];
+  images: [] = [];
 
   ngOnInit(): void {
     this.translate.get('Gallery')
@@ -26,13 +25,13 @@ export class GalleryComponent implements OnInit {
 
   addImages(): any {
     for (let i = 0; i < 6; i++) {
-      this.images.push({
-        img: `../../assets/images/gallery/${i}.jpeg`,
-        thumb: `../../assets/images/gallery/${i}-min.jpeg`,
-        description: '',
-        id: i,
-        width: 3024
-      });
+      // this.images.push({
+      //   img: `../../assets/images/gallery/${i}.jpeg`,
+      //   thumb: `../../assets/images/gallery/${i}-min.jpeg`,
+      //   description: '',
+      //   id: i,
+      //   width: 3024
+      // });
     }
 
   }

@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {NgModule, isDevMode} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -15,10 +15,9 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {AlertModule} from 'ngx-bootstrap/alert';
 import {GalleryComponent} from './core/components/gallery/gallery.component';
-import {CustomLightboxAdapter} from './core/services/CustomLightBoxAdapter.service';
-import {LightboxAdapter, NgxPhotoswipeModule} from '@fnxone/ngx-photoswipe';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {UnderConstructionComponent} from './core/components/under-construction/under-construction.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -38,7 +37,6 @@ import {UnderConstructionComponent} from './core/components/under-construction/u
     CommonModule,
     HttpClientModule,
     AlertModule.forRoot(),
-    NgxPhotoswipeModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -46,10 +44,13 @@ import {UnderConstructionComponent} from './core/components/under-construction/u
         deps: [HttpClient]
       }
     }),
-    BrowserAnimationsModule
-  ],
-  providers: [
-    {provide: LightboxAdapter, useClass: CustomLightboxAdapter}
+    BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   bootstrap: [AppComponent]
 })
